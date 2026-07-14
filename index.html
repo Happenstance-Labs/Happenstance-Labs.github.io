@@ -1,11 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happenstance Labs</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Happenstance Labs creates thoughtful digital products that make complex systems easier to understand and use.">
+  <meta name="theme-color" content="#07130f">
+  <title>Happenstance Labs — Thoughtful technology for complicated worlds</title>
+  <style>
+    :root{--ink:#f5f3ec;--muted:#a8b4ad;--green:#59d8a6;--gold:#d9b968;--line:rgba(255,255,255,.12)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:radial-gradient(circle at 80% 10%,rgba(48,151,108,.24),transparent 32%),linear-gradient(145deg,#07130f,#0b1b15 55%,#06100d);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.3;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(#000,transparent)}
+    a{color:inherit;text-decoration:none}.wrap{width:min(calc(100% - 36px),1160px);margin:auto;position:relative;z-index:1}
+    nav{height:88px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:750}.mark{width:34px;aspect-ratio:1;border:1px solid rgba(89,216,166,.5);border-radius:50%;position:relative}
+    .mark:before,.mark:after{content:"";position:absolute;width:7px;aspect-ratio:1;border-radius:50%;background:var(--green);top:13px;left:7px;box-shadow:0 0 16px var(--green)}
+    .mark:after{left:20px;top:9px;background:var(--gold);box-shadow:0 0 16px var(--gold)}
+    .small{color:var(--muted);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase}
+    .hero{min-height:calc(100vh - 88px);display:grid;grid-template-columns:1.3fr .7fr;gap:60px;align-items:center;padding:80px 0 100px}
+    .eyebrow{color:var(--green);font-size:.76rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;margin-bottom:28px}
+    .eyebrow:before{content:"";display:inline-block;width:28px;height:1px;background:currentColor;margin-right:10px;vertical-align:middle}
+    h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.055em}h1{margin:0;font-size:clamp(4rem,8.3vw,8.1rem);line-height:.92}h1 em{display:block;color:var(--green);font-weight:400}
+    .intro{max-width:660px;color:#c9d0cc;font-size:clamp(1.05rem,1.5vw,1.28rem);line-height:1.75;margin:34px 0 0}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}.btn{min-height:52px;padding:0 22px;border-radius:999px;display:inline-flex;align-items:center;gap:10px;font-weight:750;font-size:.92rem;border:1px solid var(--line);transition:.18s}.btn:hover{transform:translateY(-2px)}.primary{background:var(--green);color:#07130f;border-color:var(--green)}
+    .orbit{min-height:470px;display:grid;place-items:center;position:relative}.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(89,216,166,.18);border-radius:50%;width:370px;height:370px}.orbit:after{width:260px;height:260px;border-color:rgba(217,185,104,.14)}
+    .core{width:165px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;text-align:center;position:relative;z-index:2;background:radial-gradient(circle at 35% 30%,rgba(89,216,166,.24),rgba(9,28,21,.9) 65%);border:1px solid rgba(89,216,166,.35);box-shadow:0 0 75px rgba(50,170,122,.14)}
+    .core span{color:var(--muted);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}.core strong{display:block;color:var(--ink);font:400 1.2rem Georgia,serif;letter-spacing:0;text-transform:none;margin-top:7px}
+    .section{padding:104px 0;border-top:1px solid var(--line)}.grid{display:grid;grid-template-columns:.5fr 1.5fr;gap:60px}.label{color:var(--green);font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+    h2{font-size:clamp(2.7rem,5vw,5.1rem);line-height:1.03;margin:0}h2 span{color:var(--muted)}
+    .cards{grid-column:2;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}.card{padding:24px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.05);min-height:180px}.num{color:var(--gold);font:400 .72rem ui-monospace,monospace}.card h3{margin:40px 0 10px;font-size:1.03rem}.card p{margin:0;color:var(--muted);line-height:1.6;font-size:.91rem}
+    .venture{margin-top:28px;min-height:420px;padding:clamp(28px,5vw,62px);border:1px solid rgba(89,216,166,.25);border-radius:28px;background:linear-gradient(120deg,rgba(89,216,166,.09),transparent 58%),rgba(255,255,255,.035);display:grid;grid-template-columns:1fr .75fr;gap:40px;align-items:end;overflow:hidden;position:relative}
+    .venture:after{content:"CW";position:absolute;right:-22px;top:-45px;color:transparent;-webkit-text-stroke:1px rgba(89,216,166,.12);font:400 clamp(12rem,25vw,23rem) Georgia,serif;letter-spacing:-.12em;line-height:1}.venture>div,.venture>a{position:relative;z-index:1}.venture h2{font-size:clamp(3.2rem,6vw,6rem);margin-bottom:18px}.venture p{max-width:600px;color:#c7cfca;font-size:1.04rem;line-height:1.7;margin:0}.venture a{justify-self:end;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:7px;font-weight:750}
+    footer{min-height:180px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:30px;color:var(--muted);font-size:.84rem;line-height:1.6}
+    @media(max-width:880px){.hero{grid-template-columns:1fr}.orbit{display:none}.grid{grid-template-columns:1fr}.cards{grid-column:1}.venture{grid-template-columns:1fr}.venture a{justify-self:start}}
+    @media(max-width:650px){nav{height:74px}.small{display:none}.hero{min-height:auto;padding:64px 0 84px}h1{font-size:clamp(3.5rem,18vw,5.4rem)}.section{padding:76px 0}.cards{grid-template-columns:1fr}.card{min-height:150px}.card h3{margin-top:26px}.venture{min-height:500px;border-radius:22px}footer{align-items:flex-start;justify-content:center;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+  </style>
 </head>
 <body>
-  <h1>Happenstance Labs</h1>
+  <div class="wrap">
+    <nav><a class="brand" href="#top"><span class="mark" aria-hidden="true"></span><span>Happenstance Labs</span></a><span class="small">Independent product studio · UK</span></nav>
+    <main id="top">
+      <section class="hero">
+        <div>
+          <div class="eyebrow">Ideas, engineered</div>
+          <h1>Thoughtful technology for <em>complicated worlds.</em></h1>
+          <p class="intro">Happenstance Labs is an independent product company creating useful, engaging digital experiences at the intersection of technology, information and everyday life.</p>
+          <div class="actions"><a class="btn primary" href="#venture">See what is emerging ↘</a><a class="btn" href="mailto:support@chamberwise.co.uk">Start a conversation</a></div>
+        </div>
+        <div class="orbit" aria-hidden="true"><div class="core"><span>Built around<strong>curiosity</strong></span></div></div>
+      </section>
+      <section class="section grid">
+        <div class="label">How we think</div>
+        <h2>Complexity is inevitable. <span>Confusion is not.</span></h2>
+        <div class="cards">
+          <article class="card"><span class="num">01</span><h3>Make it understandable</h3><p>We turn dense subjects and difficult systems into experiences people can actually navigate.</p></article>
+          <article class="card"><span class="num">02</span><h3>Make it worth returning to</h3><p>Good products earn attention through usefulness, clarity and a little sense of discovery.</p></article>
+          <article class="card"><span class="num">03</span><h3>Build with intent</h3><p>Technology serves the idea—not the other way around. Every feature should have a reason to exist.</p></article>
+        </div>
+      </section>
+      <section class="section" id="venture">
+        <div class="label">Our first public venture</div>
+        <div class="venture"><div><h2>ChamberWise</h2><p>A new way to explore, understand and engage with UK Parliament. Built to make Westminster feel less distant—and considerably more approachable.</p></div><a href="https://chamberwise.co.uk" target="_blank" rel="noopener">Visit ChamberWise ↗</a></div>
+      </section>
+    </main>
+    <footer><div>Happenstance Labs develops original digital products for areas where better design and thoughtful technology can make a meaningful difference.</div><div>© <span id="year"></span> Happenstance Labs</div></footer>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
 </body>
 </html>
